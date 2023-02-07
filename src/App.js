@@ -17,16 +17,14 @@ function App() {
     department: 'CSE',
   };
 
-  const student2 = {
-    name: 'Nazmul Ahsan',
-    institute: 'Jahangirnagar University',
-    department: 'CSE',
-  };
-
   return (
     <div className="App">
       <Student {...student1}></Student>
-      <Student {...student2}></Student>
+      <Student
+        name={'Sabrina Sharmin'}
+        institute={'RUET'}
+        department={'ECE'}
+      ></Student>
     </div>
   );
 }
