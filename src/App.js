@@ -1,11 +1,19 @@
 import './App.css';
 
 function Student() {
+  const name = 'Kamrul Hasan';
+  const institute = 'Jahangirnagar University';
+  const department = 'CSE';
+
   return (
     <div>
-      <h1>Name: Kamrul Hasan</h1>
-      <h2>Institute: Jahangirnagar University</h2>
-      <h3>Department: CSE</h3>
+      {
+        // to write javascripts
+        console.log('rendered')
+      }
+      <h1>{`Name: ${name}`}</h1>
+      <h2>{`Institute: ${institute}`}</h2>
+      <h3>{`Department: ${department}`}</h3>
     </div>
   );
 }
