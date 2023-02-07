@@ -1,7 +1,6 @@
 import './App.css';
 
-function Student(props) {
-  const { name, institute, department } = props;
+function Student({ name, institute, department }) {
   return (
     <div className="student">
       <h1>{`Name: ${name}`}</h1>
