@@ -1,11 +1,12 @@
 import './App.css';
 
 function Student(props) {
+  const { name, institute, department } = props;
   return (
     <div className="student">
-      <h1>{`Name: ${props.name}`}</h1>
-      <h2>{`Institute: ${props.institute}`}</h2>
-      <h3>{`Department: ${props.department}`}</h3>
+      <h1>{`Name: ${name}`}</h1>
+      <h2>{`Institute: ${institute}`}</h2>
+      <h3>{`Department: ${department}`}</h3>
     </div>
   );
 }
