@@ -1,23 +1,32 @@
 import './App.css';
 
-function Student() {
-  const name = 'Kamrul Hasan';
-  const institute = 'Jahangirnagar University';
-  const department = 'CSE';
-
+function Student(props) {
   return (
     <div className="student">
-      <h1>{`Name: ${name}`}</h1>
-      <h2>{`Institute: ${institute}`}</h2>
-      <h3>{`Department: ${department}`}</h3>
+      <h1>{`Name: ${props.name}`}</h1>
+      <h2>{`Institute: ${props.institute}`}</h2>
+      <h3>{`Department: ${props.department}`}</h3>
     </div>
   );
 }
 
 function App() {
+  const student1 = {
+    name: 'Mehedi Hasan',
+    institute: 'Jahangirnagar University',
+    department: 'CSE',
+  };
+
+  const student2 = {
+    name: 'Nazmul Ahsan',
+    institute: 'Jahangirnagar University',
+    department: 'CSE',
+  };
+
   return (
     <div className="App">
-      <Student></Student>
+      <Student {...student1}></Student>
+      <Student {...student2}></Student>
     </div>
   );
 }
