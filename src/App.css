@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  gap: 10px;
 }
 
 .App-logo {
@@ -35,4 +39,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.student {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
 }
