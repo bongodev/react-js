@@ -1,25 +1,7 @@
 import { useState } from 'react';
 
-function ListInput({ handleOnChange, handleAddItem }) {
-  return (
-    <div className="Input">
-      <input onChange={handleOnChange} />
-      <button onClick={handleAddItem}>Add</button>
-    </div>
-  );
-}
-
-function List({ list }) {
-  return (
-    <div className="List">
-      <ul>
-        {list.map(function (item, index) {
-          return <li key={index}>{item}</li>;
-        })}
-      </ul>
-    </div>
-  );
-}
+import ListInput from './ListInput';
+import List from './List';
 
 function ListBuilder() {
   const [newItem, setNewItem] = useState('');
