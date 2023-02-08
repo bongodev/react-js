@@ -1,5 +1,14 @@
 import { useState } from 'react';
 
+function ListInput({ handleOnChange, handleAddItem }) {
+  return (
+    <div className="Input">
+      <input onChange={handleOnChange} />
+      <button onClick={handleAddItem}>Add</button>
+    </div>
+  );
+}
+
 function ListBuilder() {
   const [newItem, setNewItem] = useState('');
   const [list, setList] = useState([]);
@@ -17,10 +26,10 @@ function ListBuilder() {
 
   return (
     <div className="ListBuilder">
-      <div className="Input">
-        <input onChange={handleOnChange} />
-        <button onClick={handleAddItem}>Add</button>
-      </div>
+      <ListInput
+        handleAddItem={handleAddItem}
+        handleOnChange={handleOnChange}
+      />
       <div className="List">
         <ul>
           {list.map(function (item, index) {
