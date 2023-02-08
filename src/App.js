@@ -1,9 +1,23 @@
 import './App.css';
 
 function App() {
+  const list = ['Apple', 'Dell', 'HP', 'ASUS', 'ACER', 'Samsung', 'Walton'];
+
   return (
     <div className="App">
-      React Examples
+      <div className="ListBuilder">
+        <div className="Input">
+          <input />
+          <button>Add</button>
+        </div>
+        <div className="List">
+          <ul>
+            {list.map(function (item) {
+              return <li>{item}</li>;
+            })}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
