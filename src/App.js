@@ -12,8 +12,8 @@ function App() {
         </div>
         <div className="List">
           <ul>
-            {list.map(function (item) {
-              return <li>{item}</li>;
+            {list.map(function (item, index) {
+              return <li key={index}>{item}</li>;
             })}
           </ul>
         </div>
