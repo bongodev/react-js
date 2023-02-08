@@ -37,14 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-.ListBuilder {
-  display: flex;
-  flex-direction: column;
-}
-
-.Input {
-  display: flex;
-  gap: 12px;
-  padding: 10px 10px;
-}

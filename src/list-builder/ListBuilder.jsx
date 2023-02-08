@@ -3,6 +3,8 @@ import { useState } from 'react';
 import ListInput from './ListInput';
 import List from './List';
 
+import './ListBuilder.css';
+
 function ListBuilder() {
   const [newItem, setNewItem] = useState('');
   const [list, setList] = useState([]);
