@@ -9,6 +9,18 @@ function ListInput({ handleOnChange, handleAddItem }) {
   );
 }
 
+function List({ list }) {
+  return (
+    <div className="List">
+      <ul>
+        {list.map(function (item, index) {
+          return <li key={index}>{item}</li>;
+        })}
+      </ul>
+    </div>
+  );
+}
+
 function ListBuilder() {
   const [newItem, setNewItem] = useState('');
   const [list, setList] = useState([]);
@@ -30,13 +42,7 @@ function ListBuilder() {
         handleAddItem={handleAddItem}
         handleOnChange={handleOnChange}
       />
-      <div className="List">
-        <ul>
-          {list.map(function (item, index) {
-            return <li key={index}>{item}</li>;
-          })}
-        </ul>
-      </div>
+      <List list={list} />
     </div>
   );
 }
