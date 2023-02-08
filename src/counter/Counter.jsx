@@ -21,4 +21,4 @@ function Counter() {
   );
 }
 
-export { Counter };
+export default Counter;
