@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { authenticate } from './LoginServices';
 
 import './Login.css';
+import FormInput from './FormInput';
 
 function Login() {
   const [credential, setCrdential] = useState({
@@ -30,15 +31,18 @@ function Login() {
   return (
     <div className="login">
       <form className="loginForm" onSubmit={handleLogin}>
-        <div className="formInput">
-          <label>User ID</label>
-          <input name="email" type="email" onChange={handleOnChange} />
-        </div>
+        <FormInput
+          label="User Id"
+          name="email"
+          handleOnChange={handleOnChange}
+        />
 
-        <div className="formInput">
-          <label>Password</label>
-          <input name="password" type="password" onChange={handleOnChange} />
-        </div>
+        <FormInput
+          label="Password"
+          name="password"
+          type="password"
+          handleOnChange={handleOnChange}
+        />
 
         <div className="formInput">
           <input type="submit" value="Login" />
