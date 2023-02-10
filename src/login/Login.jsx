@@ -8,11 +8,10 @@ function Login() {
   });
 
   const handleOnChange = (event) => {
-    if (event.target.name === 'email') {
-      setCrdential({ ...credential, email: event.target.value });
-    } else if (event.target.name === 'password') {
-      setCrdential({ ...credential, password: event.target.value });
-    }
+    const update = {
+      [event.target.name]: event.target.value,
+    };
+    setCrdential({ ...credential, ...update });
   };
 
   return (
