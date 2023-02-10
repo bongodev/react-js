@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import { authenticate } from './LoginServices';
+
 import './Login.css';
 
 function Login() {
@@ -14,9 +17,19 @@ function Login() {
     setCrdential({ ...credential, ...update });
   };
 
+  const handleLogin = (event) => {
+    event.preventDefault();
+    try {
+      authenticate(credential);
+      // redirect
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   return (
     <div className="login">
-      <form className="loginForm">
+      <form className="loginForm" onSubmit={handleLogin}>
         <div className="formInput">
           <label>User ID</label>
           <input name="email" type="email" onChange={handleOnChange} />
