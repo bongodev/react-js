@@ -13,6 +13,22 @@ class Counter extends React.Component {
   }
 
   increment(incrementBy) {
+    /**
+     * we should avoid doing this, 
+     * when the state update is dependent on the previous state
+     */
+    
+    // this.setState({
+    //   count: this.state.count + 3,
+    // });
+    // this.setState({
+    //   count: this.state.count + incrementBy,
+    // });
+
+    this.setState((prevState) => ({
+      ...prevState,
+      count: prevState.count + 3,
+    }));
     this.setState((prevState) => ({
       ...prevState,
       count: prevState.count + incrementBy,
