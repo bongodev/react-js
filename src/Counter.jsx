@@ -4,6 +4,7 @@ class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      dummyState: 'dummy',
       count: 0,
     };
     console.log('inside constructor', props);
@@ -12,10 +13,10 @@ class Counter extends React.Component {
   }
 
   increment() {
-    const previousCount = this.state.count;
-    this.setState({
-      count: previousCount + 1,
-    });
+    this.setState((prevState) => ({
+      ...prevState,
+      count: prevState.count + 1,
+    }));
     console.log('updating state:: ', this.state);
   }
 
