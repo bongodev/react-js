@@ -12,27 +12,24 @@ class Counter extends React.Component {
     this.increment = this.increment.bind(this);
   }
 
-  increment(incrementBy) {
-    /**
-     * we should avoid doing this, 
-     * when the state update is dependent on the previous state
-     */
-    
-    // this.setState({
-    //   count: this.state.count + 3,
-    // });
-    // this.setState({
-    //   count: this.state.count + incrementBy,
-    // });
+  componentDidMount() {
+    console.log('executing componentDidMount()....');
+  }
 
-    this.setState((prevState) => ({
-      ...prevState,
-      count: prevState.count + 3,
-    }));
-    this.setState((prevState) => ({
-      ...prevState,
-      count: prevState.count + incrementBy,
-    }));
+  componentDidUpdate() {
+    console.log('executing componentDidUpdate()....');
+    const { count } = this.state;
+    if (count > 10) {
+      alert('too much!!!!');
+    } else if (count < 0) {
+      alert('too low!!!!');
+    }
+  }
+
+  increment(incrementBy) {
+    this.setState({
+      count: this.state.count + incrementBy,
+    });
     console.log('updating state:: ', this.state);
   }
 
