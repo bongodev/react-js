@@ -5,7 +5,8 @@ function Counter() {
 
   useEffect(() => {
     console.log('executing useEffect hook');
-  });
+    document.title = `Current count is ${count}`;
+  }, [count]);
 
   const handleIncrease = () => {
     setCount(count + 1);
