@@ -6,8 +6,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      {/* <Counter /> */}
-      <Entries />
+      <Counter />
+      {/* <Entries /> */}
     </div>
   );
 }
