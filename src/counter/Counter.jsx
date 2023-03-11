@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Counter() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('executing useEffect hook');
+  });
 
   const handleIncrease = () => {
     setCount(count + 1);
@@ -11,6 +15,7 @@ function Counter() {
     setCount(count - 1);
   };
 
+  console.log('rendering.....');
   return (
     <div className="Counter">
       <h1>Counter</h1>
