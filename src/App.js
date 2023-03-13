@@ -4,8 +4,6 @@ import UserContext from './context/UserContext';
 
 import './App.css';
 
-const Url = ({ href }) => <a href={href}>{href}</a>;
-
 function App() {
   const [user, setUser] = useState();
 
@@ -33,9 +31,6 @@ function App() {
     <div className="App">
       <UserContext.Provider value={user}>
         <Profile />
-        <UserContext.Consumer>
-          {({ url }) => <Url href={url} />}
-        </UserContext.Consumer>
       </UserContext.Provider>
     </div>
   );
