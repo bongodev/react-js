@@ -20,9 +20,22 @@ export default function UserProvider({ children }) {
     }, 2000);
   }, []);
 
+  const increaseAge = () => {
+    setUser((user) => ({ ...user, age: user.age + 1 }));
+  };
+
   if (!user) {
     return <div>Loading......</div>;
   }
 
-  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider
+      value={{
+        ...user,
+        increaseAge,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
 }
