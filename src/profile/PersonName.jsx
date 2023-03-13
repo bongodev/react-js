@@ -7,13 +7,18 @@ const UserPortfolioLink = () => {
   return <a href={url}>{`${firstName} ${lastName}`}</a>;
 };
 
-export const PersonName = () => {
-  const { firstName, lastName } = useContext(UserContext);
+class PersonName extends React.Component {
+  render() {
+    const { firstName, lastName } = this.context;
+    return (
+      <div>
+        <h1>{`Name: ${firstName} ${lastName}`}</h1>
+        <UserPortfolioLink />
+      </div>
+    );
+  }
+}
 
-  return (
-    <div>
-      <h1>{`Name: ${firstName} ${lastName}`}</h1>
-      <UserPortfolioLink />
-    </div>
-  );
-};
+PersonName.contextType = UserContext;
+
+export { PersonName };
