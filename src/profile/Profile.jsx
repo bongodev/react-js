@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import AuthContext from '../context/AuthContext';
 import UserContext from '../context/UserContext';
 import { PersonName } from './PersonName';
 
@@ -14,10 +15,19 @@ const PersonAge = () => {
 };
 
 export default function Profile() {
-  return (
+  const { isAuthorized, handleLogin, handleLogout } = useContext(AuthContext);
+
+  return isAuthorized ? (
     <div>
       <PersonName />
       <PersonAge />
+      <div>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
+    </div>
+  ) : (
+    <div>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 }
